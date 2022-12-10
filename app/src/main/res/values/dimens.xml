@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="play_button_height">90dp</dimen>
+    <dimen name="play_button_width">90dp</dimen>
+    <dimen name="play_button_margins">5dp</dimen>
+    <!-- multiple of 3 of the above dimension-->
+    <dimen name="play_area_width">300dp</dimen>
+    <dimen name="play_area_height">300dp</dimen>
+</resources>
