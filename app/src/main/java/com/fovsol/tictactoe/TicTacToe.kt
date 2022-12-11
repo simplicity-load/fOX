@@ -18,20 +18,23 @@ class TicTacToe {
         // Check for rows that have all 1s or -1s
         board.map { row ->
             (row[0] + row[1] + row[2]).also {
-                if (it == 3 || it == -3) return true
+                if (is3orN3(it)) return true
             }
         }
         // Check for columns that have all 1s or -1s
         for (i in board.indices)
             (board[0][i] + board[1][i] + board[2][i]).also {
-                if (it == 3 || it == -3) return true
+                if (is3orN3(it)) return true
             }
         // Check for diagonals
-        (board[0][0] + board[1][1] + board[2][2]).also { if (it == 3 || it == -3) return true }
-        (board[0][2] + board[1][1] + board[2][0]).also { if (it == 3 || it == -3) return true }
+        (board[0][0] + board[1][1] + board[2][2]).also { if (is3orN3(it)) return true }
+        (board[0][2] + board[1][1] + board[2][0]).also { if (is3orN3(it)) return true }
         // Otherwise game has not ended
         return false
     }
+
+    // Check if X is 3 or -3
+    private fun is3orN3(x: Int): Boolean = x == 3 || x == -3
 
     // Check if board is filled
     private fun boardFilled(): Boolean {
