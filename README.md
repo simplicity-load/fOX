@@ -18,13 +18,23 @@ This includes the TicTacToe class, the MainActivity class and the main layout fi
 
 ## fOX v1.1 - fragments and navigation
 
-[Commit latest](https://github.com/simplicity-load/fOX)
+[Commit c2d8b](https://github.com/simplicity-load/fOX/tree/c2d8b4a4370c5e7563c8a40fda5df6840872459c)
 
 This update splits the main activity into fragments and enables navigation between two fragments, the Start screen and the Game screen.
 
-## Screenshots
+### Screenshots 
 
 <img src="./imgs/start_screen.png" alt="Start Screen" width="30%"/><img src="./imgs/game_screen.png" alt="Game Screen" width="30%"/><img src="./imgs/gamewon_screen.png" alt="Game Won Screen" width="30%"/>
+
+## fOX v1.2 - safeArgs
+
+[Commit latest](https://github.com/simplicity-load/fOX)
+
+Added two fragments (GameDrawFragments and GameWonFragment) and sent safe arguments to one of them.
+
+### Screenshots 
+
+<img src="./imgs/gamewon_v1.2_screen.png" alt="Game Won Screen" width="30%"/><img src="./imgs/gamedraw_v1.2_screen.png" alt="Game Draw Screen" width="30%"/>
 
 # Licensing
 

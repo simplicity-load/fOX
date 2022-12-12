@@ -167,19 +167,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/GameOverText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/playerText"
-            app:layout_constraintVertical_bias="0.3"
-            tools:text="testing\nlol" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

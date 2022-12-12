@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+apply plugin: 'androidx.navigation.safeargs'
+
 android {
     namespace 'com.fovsol.tictactoe'
     compileSdk 33

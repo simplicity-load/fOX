@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.fovsol.tictactoe.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
 
     private lateinit var binding: FragmentGameBinding
-    private lateinit var ticTacToe: TicTacToe
+    private var ticTacToe: TicTacToe = TicTacToe()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,9 +24,6 @@ class GameFragment : Fragment() {
             inflater,
             R.layout.fragment_game, container, false
         )
-
-        // Initialize the logic and the UI
-        initializeGame()
 
         // Initialize onClickListeners functions
         binding.apply {
@@ -38,7 +36,7 @@ class GameFragment : Fragment() {
             buttonSeventh.setOnClickListener { button(it) }
             buttonEighth.setOnClickListener { button(it) }
             buttonNinth.setOnClickListener { button(it) }
-            GameOverText.setOnClickListener { restartGame() }
+            playerImage.setImageResource(XorOResource())
         }
         return binding.root
     }
@@ -64,10 +62,13 @@ class GameFragment : Fragment() {
             // If game has finished take appropriate action,
             // if not check if boardFilled() and if true restartGame()
             if (ticTacToe.gameFinished) {
-                binding.GameOverText.text =
-                    "Game Over, ${if (!ticTacToe.playerXTurn) "X" else "O"} won!\nPress here to restart game!"
+                findNavController().navigate(
+                    GameFragmentDirections.actionGameFragmentToGameWonFragment(
+                        !ticTacToe.playerXTurn
+                    )
+                )
             } else if (ticTacToe.boardFilled)
-                restartGame()
+                findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameDrawFragment())
         }
     }
 
@@ -86,23 +87,4 @@ class GameFragment : Fragment() {
 
         else -> Pair(3, 3)
     }
-
-    private fun initializeGame() {
-        this.ticTacToe = TicTacToe()
-        binding.apply {
-            playerImage.setImageResource(XorOResource())
-            buttonFirst.setImageResource(0)
-            buttonSecond.setImageResource(0)
-            buttonThird.setImageResource(0)
-            buttonFourth.setImageResource(0)
-            buttonFifth.setImageResource(0)
-            buttonSixth.setImageResource(0)
-            buttonSeventh.setImageResource(0)
-            buttonEighth.setImageResource(0)
-            buttonNinth.setImageResource(0)
-            GameOverText.text = ""
-        }
-    }
-
-    private fun restartGame() = initializeGame()
 }
