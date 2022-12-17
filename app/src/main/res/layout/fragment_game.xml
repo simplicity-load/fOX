@@ -5,6 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.fovsol.tictactoe.GameFragment">
 
+    <data>
+        <variable
+            name="gameFragment"
+            type="com.fovsol.tictactoe.GameFragment" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -63,6 +69,7 @@
                     android:layout_marginRight="@dimen/play_button_margins"
                     android:layout_marginBottom="@dimen/play_button_margins"
                     android:layout_weight="1"
+                    android:onClick="@{(view) -> gameFragment.buttonClick(view)}"
                     tools:srcCompat="@drawable/x" />
 
                 <ImageView
@@ -74,6 +81,7 @@
                     android:layout_marginRight="@dimen/play_button_margins"
                     android:layout_marginBottom="@dimen/play_button_margins"
                     android:layout_weight="1"
+                    android:onClick="@{(view) -> gameFragment.buttonClick(view)}"
                     tools:srcCompat="@drawable/x" />
 
                 <ImageView
@@ -85,6 +93,7 @@
                     android:layout_marginRight="@dimen/play_button_margins"
                     android:layout_marginBottom="@dimen/play_button_margins"
                     android:layout_weight="1"
+                    android:onClick="@{(view) -> gameFragment.buttonClick(view)}"
                     tools:srcCompat="@drawable/x" />
             </LinearLayout>
 
@@ -102,6 +111,7 @@
                     android:layout_marginRight="@dimen/play_button_margins"
                     android:layout_marginBottom="@dimen/play_button_margins"
                     android:layout_weight="1"
+                    android:onClick="@{(view) -> gameFragment.buttonClick(view)}"
                     tools:srcCompat="@drawable/x" />
 
                 <ImageView
@@ -113,6 +123,7 @@
                     android:layout_marginRight="@dimen/play_button_margins"
                     android:layout_marginBottom="@dimen/play_button_margins"
                     android:layout_weight="1"
+                    android:onClick="@{(view) -> gameFragment.buttonClick(view)}"
                     tools:srcCompat="@drawable/x" />
 
                 <ImageView
@@ -124,6 +135,7 @@
                     android:layout_marginRight="@dimen/play_button_margins"
                     android:layout_marginBottom="@dimen/play_button_margins"
                     android:layout_weight="1"
+                    android:onClick="@{(view) -> gameFragment.buttonClick(view)}"
                     tools:srcCompat="@drawable/x" />
             </LinearLayout>
 
@@ -141,6 +153,7 @@
                     android:layout_marginRight="@dimen/play_button_margins"
                     android:layout_marginBottom="@dimen/play_button_margins"
                     android:layout_weight="1"
+                    android:onClick="@{(view) -> gameFragment.buttonClick(view)}"
                     tools:srcCompat="@drawable/x" />
 
                 <ImageView
@@ -152,6 +165,7 @@
                     android:layout_marginRight="@dimen/play_button_margins"
                     android:layout_marginBottom="@dimen/play_button_margins"
                     android:layout_weight="1"
+                    android:onClick="@{(view) -> gameFragment.buttonClick(view)}"
                     tools:srcCompat="@drawable/x" />
 
                 <ImageView
@@ -163,6 +177,7 @@
                     android:layout_marginRight="@dimen/play_button_margins"
                     android:layout_marginBottom="@dimen/play_button_margins"
                     android:layout_weight="1"
+                    android:onClick="@{(view) -> gameFragment.buttonClick(view)}"
                     tools:srcCompat="@drawable/x" />
             </LinearLayout>
         </LinearLayout>

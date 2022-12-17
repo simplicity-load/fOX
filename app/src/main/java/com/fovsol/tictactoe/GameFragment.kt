@@ -25,19 +25,11 @@ class GameFragment : Fragment() {
             R.layout.fragment_game, container, false
         )
 
-        // Initialize onClickListeners functions
-        binding.apply {
-            buttonFirst.setOnClickListener { button(it) }
-            buttonSecond.setOnClickListener { button(it) }
-            buttonThird.setOnClickListener { button(it) }
-            buttonFourth.setOnClickListener { button(it) }
-            buttonFifth.setOnClickListener { button(it) }
-            buttonSixth.setOnClickListener { button(it) }
-            buttonSeventh.setOnClickListener { button(it) }
-            buttonEighth.setOnClickListener { button(it) }
-            buttonNinth.setOnClickListener { button(it) }
-            playerImage.setImageResource(XorOResource())
-        }
+        // Assign this fragment to the data binding variable `gameFragment`
+        binding.gameFragment = this
+
+        // Set the playerImage to the correct Resource
+        binding.playerImage.setImageResource(XorOResource())
         return binding.root
     }
 
@@ -50,10 +42,10 @@ class GameFragment : Fragment() {
         if (!ticTacToe.playerXTurn) R.drawable.x else R.drawable.o
 
     @SuppressLint("SetTextI18n")
-    fun button(view: View) {
+    fun buttonClick(view: View) {
         val nrBut: Pair<Int, Int> = matchButtons(view)
         if (ticTacToe.play(nrBut.first, nrBut.second)) {
-            if (!ticTacToe.gameFinished) { // If game hasn't finished change playerImage
+            if (!(ticTacToe.gameFinished || ticTacToe.boardFilled)) { // If game hasn't finished or ended in a draw change playerImage
                 binding.playerImage.setImageResource(XorOResource()) // Get current player's image
             }
             // Put an X/O on the button that was clicked

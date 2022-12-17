@@ -28,13 +28,19 @@ This update splits the main activity into fragments and enables navigation betwe
 
 ## fOX v1.2 - safeArgs
 
-[Commit latest](https://github.com/simplicity-load/fOX)
+[Commit 1986c](https://github.com/simplicity-load/fOX/tree/1986c5b20bad9701c39bcb5bbda3d2c5dfc46066)
 
 Added two fragments (GameDrawFragments and GameWonFragment) and sent safe arguments to one of them.
 
 ### Screenshots 
 
 <img src="./imgs/gamewon_v1.2_screen.png" alt="Game Won Screen" width="30%"/><img src="./imgs/gamedraw_v1.2_screen.png" alt="Game Draw Screen" width="30%"/>
+
+## fOX v1.2.1 - Data binding improvement
+
+Moved the data binding onClick assignments to the layout file.
+
+[Commit latest](https://github.com/simplicity-load/fOX)
 
 # Licensing
 
