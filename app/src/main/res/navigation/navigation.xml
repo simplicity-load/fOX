@@ -13,10 +13,14 @@
         <action
             android:id="@+id/action_startFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_reflexFragment"
+            app:destination="@id/reflexFragment"
+            app:popUpTo="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.fovsol.tictactoe.GameFragment"
+        android:name="com.fovsol.tictactoe.tictactoe.GameFragment"
         android:label="fragment_game"
         tools:layout="@layout/fragment_game" >
         <action
@@ -30,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameDrawFragment"
-        android:name="com.fovsol.tictactoe.GameDrawFragment"
+        android:name="com.fovsol.tictactoe.tictactoe.GameDrawFragment"
         android:label="GameDrawFragment" >
         <action
             android:id="@+id/action_gameDrawFragment_to_gameFragment"
@@ -40,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameWonFragment"
-        android:name="com.fovsol.tictactoe.GameWonFragment"
+        android:name="com.fovsol.tictactoe.tictactoe.GameWonFragment"
         android:label="GameWonFragment" >
         <action
             android:id="@+id/action_gameWonFragment_to_gameFragment"
@@ -51,4 +55,9 @@
             android:name="winningPlayer"
             app:argType="boolean" />
     </fragment>
+    <fragment
+        android:id="@+id/reflexFragment"
+        android:name="com.fovsol.tictactoe.flexmp.ReflexFragment"
+        android:label="ReflexFragment"
+        tools:layout="@layout/fragment_reflex"/>
 </navigation>

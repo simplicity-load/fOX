@@ -1,4 +1,4 @@
-package com.fovsol.tictactoe
+package com.fovsol.tictactoe.tictactoe
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,6 +9,8 @@ import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.fovsol.tictactoe.R
+import com.fovsol.tictactoe.TicTacToe
 import com.fovsol.tictactoe.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {

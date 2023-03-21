@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.fovsol.tictactoe.flexmp.ReflexViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".flexmp.ReflexFragment">
+
+        <TextView
+            android:id="@+id/topTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:fontFamily="serif-monospace"
+            android:rotation="180"
+            android:text="@{String.valueOf(viewModel.topTimer)}"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/topField"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topField"
+            tools:text="100ms" />
+
+        <TextView
+            android:id="@+id/topCumTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="3dp"
+            android:fontFamily="casual"
+            android:rotation="180"
+            android:text="@{@string/reflex_total_amount(viewModel.topCumTimer)}"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/topField"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Total\n10" />
+
+        <TextView
+            android:id="@+id/bottomTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:fontFamily="serif-monospace"
+            android:text="@{String.valueOf(viewModel.bottomTimer)}"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomField"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottomField"
+            tools:text="100ms" />
+
+        <TextView
+            android:id="@+id/bottomCumTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:elevation="3dp"
+            android:fontFamily="casual"
+            android:text="@{@string/reflex_total_amount(viewModel.bottomCumTimer)}"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottomField"
+            tools:text="Total\n10" />
+
+
+        <ImageView
+            android:id="@+id/topField"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="32dp"
+            android:scaleType="fitXY"
+            android:onClick="@{() -> viewModel.topPlayerButton()}"
+            app:layout_constraintBottom_toTopOf="@+id/middleLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/field_gray" />
+
+
+        <ImageView
+            android:id="@+id/bottomField"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:scaleType="fitXY"
+            android:onClick="@{() -> viewModel.bottomPlayerButton()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/middleLine"
+            app:srcCompat="@drawable/field_gray" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/middleLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/penaltyInc"
+            android:layout_width="35dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="@{() -> viewModel.penaltyIncrease()}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomField"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/penaltyScore"
+            app:layout_constraintTop_toBottomOf="@+id/topField"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/plus" />
+
+        <TextView
+            android:id="@+id/penaltyScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@{@string/reflex_penalty_score(viewModel.penaltyScoreDisplay)}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomField"
+            app:layout_constraintEnd_toStartOf="@+id/penaltyInc"
+            app:layout_constraintStart_toEndOf="@+id/penaltyDec"
+            app:layout_constraintTop_toBottomOf="@+id/topField"
+            tools:text="1000" />
+
+        <ImageView
+            android:id="@+id/penaltyDec"
+            android:layout_width="35dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="@{() -> viewModel.penaltyDecrease()}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomField"
+            app:layout_constraintEnd_toStartOf="@+id/penaltyScore"
+            app:layout_constraintStart_toEndOf="@+id/restartGame"
+            app:layout_constraintTop_toBottomOf="@+id/topField"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/minus" />
+
+        <ImageView
+            android:id="@+id/restartGame"
+            android:layout_width="65dp"
+            android:layout_height="0dp"
+            android:onClick="@{() -> viewModel.restartGame()}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomField"
+            app:layout_constraintEnd_toStartOf="@+id/penaltyDec"
+            app:layout_constraintStart_toEndOf="@+id/endInc"
+            app:layout_constraintTop_toBottomOf="@+id/topField"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/reset" />
+
+        <ImageView
+            android:id="@+id/endInc"
+            android:layout_width="35dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="@{() -> viewModel.endGameIncrease()}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomField"
+            app:layout_constraintEnd_toStartOf="@+id/restartGame"
+            app:layout_constraintStart_toEndOf="@+id/endGameScore"
+            app:layout_constraintTop_toBottomOf="@+id/topField"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/plus" />
+
+        <TextView
+            android:id="@+id/endGameScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@{@string/reflex_end_game_score(viewModel.endGameScoreDisplay)}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomField"
+            app:layout_constraintEnd_toStartOf="@+id/endInc"
+            app:layout_constraintStart_toEndOf="@+id/endDec"
+            app:layout_constraintTop_toBottomOf="@+id/topField"
+            tools:text="1000" />
+
+        <ImageView
+            android:id="@+id/endDec"
+            android:layout_width="35dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="@{() -> viewModel.endGameDecrease()}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomField"
+            app:layout_constraintEnd_toStartOf="@+id/endGameScore"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topField"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/minus" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

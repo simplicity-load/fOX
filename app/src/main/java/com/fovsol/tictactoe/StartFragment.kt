@@ -22,8 +22,13 @@ class StartFragment : Fragment() {
             R.layout.fragment_start, container, false
         )
 
-        binding.playButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_startFragment_to_gameFragment)
+        binding.apply {
+            playFovis.setOnClickListener {
+                it.findNavController().navigate(R.id.action_startFragment_to_gameFragment)
+            }
+            playRetina.setOnClickListener {
+                it.findNavController().navigate(R.id.action_startFragment_to_reflexFragment)
+            }
         }
 
         return binding.root

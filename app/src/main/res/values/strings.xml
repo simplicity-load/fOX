@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">fOX</string>
-    <string name="game_name">fOX - TicTacToe</string>
+    <string name="game_name">fOX</string>
     <string name="won_string">Won!</string>
     <string name="draw_string">Draw!</string>
+    <string name="reflex_total_amount">Total\n%d</string>
+    <string name="reflex_end_game_score">%dk</string>
+    <string name="reflex_penalty_score">%.1fs</string>
 </resources>

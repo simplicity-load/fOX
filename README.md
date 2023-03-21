@@ -4,43 +4,7 @@
 
 # fOX - TicTacToe
 
-A minimally functioning TicTacToe Android application!
-
-This app is made for learning purposes only and shouldn't be taken as ground truth for best development practices.
-
-## fOX v1 - core application
-
-[Commit 96690](https://github.com/simplicity-load/fOX/tree/9669077e547074db5b34dfe1ea493071a7eb3fcc)
-
-The TicTacToe logic and the UI that supports the full extent of the game. 
-
-This includes the TicTacToe class, the MainActivity class and the main layout file.
-
-## fOX v1.1 - fragments and navigation
-
-[Commit c2d8b](https://github.com/simplicity-load/fOX/tree/c2d8b4a4370c5e7563c8a40fda5df6840872459c)
-
-This update splits the main activity into fragments and enables navigation between two fragments, the Start screen and the Game screen.
-
-### Screenshots 
-
-<img src="./imgs/start_screen.png" alt="Start Screen" width="30%"/><img src="./imgs/game_screen.png" alt="Game Screen" width="30%"/><img src="./imgs/gamewon_screen.png" alt="Game Won Screen" width="30%"/>
-
-## fOX v1.2 - safeArgs
-
-[Commit 1986c](https://github.com/simplicity-load/fOX/tree/1986c5b20bad9701c39bcb5bbda3d2c5dfc46066)
-
-Added two fragments (GameDrawFragments and GameWonFragment) and sent safe arguments to one of them.
-
-### Screenshots 
-
-<img src="./imgs/gamewon_v1.2_screen.png" alt="Game Won Screen" width="30%"/><img src="./imgs/gamedraw_v1.2_screen.png" alt="Game Draw Screen" width="30%"/>
-
-## fOX v1.2.1 - Data binding improvement
-
-Moved the data binding onClick assignments to the layout file.
-
-[Commit latest](https://github.com/simplicity-load/fOX)
+My collection of games in one program. Continue this on next commit.
 
 # Licensing
 

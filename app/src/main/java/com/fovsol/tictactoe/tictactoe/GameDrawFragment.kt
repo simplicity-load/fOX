@@ -1,4 +1,4 @@
-package com.fovsol.tictactoe
+package com.fovsol.tictactoe.tictactoe
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.fovsol.tictactoe.R
 import com.fovsol.tictactoe.databinding.FragmentGameDrawBinding
 
 class GameDrawFragment : Fragment() {

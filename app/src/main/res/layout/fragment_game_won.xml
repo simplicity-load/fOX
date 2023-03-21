@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.fovsol.tictactoe.GameWonFragment">
+    tools:context="com.fovsol.tictactoe.tictactoe.GameWonFragment">
 
     <data>
 
@@ -42,8 +42,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:fontFamily="casual"
             android:gravity="center_horizontal"
             android:text="@string/won_string"
+            android:textColor="#000000"
             android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="@+id/playerImage"
             app:layout_constraintStart_toStartOf="@+id/playerText"

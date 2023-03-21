@@ -3,12 +3,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.fovsol.tictactoe.GameFragment">
+    tools:context="com.fovsol.tictactoe.tictactoe.GameFragment">
 
     <data>
         <variable
             name="gameFragment"
-            type="com.fovsol.tictactoe.GameFragment" />
+            type="com.fovsol.tictactoe.tictactoe.GameFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

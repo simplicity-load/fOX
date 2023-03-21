@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.fovsol.tictactoe.GameDrawFragment">
+    tools:context="com.fovsol.tictactoe.tictactoe.GameDrawFragment">
 
     <data>
 
@@ -16,8 +16,10 @@
             android:id="@+id/gameDrawText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="casual"
             android:gravity="center_horizontal"
             android:text="@string/draw_string"
+            android:textColor="#000000"
             android:textSize="32sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
